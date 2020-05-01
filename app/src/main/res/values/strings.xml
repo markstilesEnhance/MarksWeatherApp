@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mark\'s Weather App</string>
+    <string name="time">TIME</string>
+    <string name="weather">WEATHER</string>
+    <string name="temp">TEMP</string>
+    <string name="precip">PRECIP</string>
+    <string name="wind">WIND</string>
+    <string name="imperial">Imperial</string>
+    <string name="metric">Metric</string>
+</resources>

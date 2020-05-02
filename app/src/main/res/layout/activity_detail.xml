@@ -22,11 +22,9 @@
 
             <TextView
                 android:id="@+id/detail_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                style="@style/BasicText"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/time"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/detail_weather"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +32,8 @@
 
             <TextView
                 android:id="@+id/detail_weather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/BasicText"
                 android:text="@string/weather"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/detail_temp"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/detail_time"
@@ -45,10 +41,8 @@
 
             <TextView
                 android:id="@+id/detail_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/BasicText"
                 android:text="@string/temp"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/detail_precip"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/detail_weather"
@@ -56,10 +50,8 @@
 
             <TextView
                 android:id="@+id/detail_precip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/BasicText"
                 android:text="@string/precip"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/detail_wind"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/detail_temp"
@@ -67,10 +59,8 @@
 
             <TextView
                 android:id="@+id/detail_wind"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/BasicText"
                 android:text="@string/wind"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/detail_precip"
@@ -82,9 +72,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/detail_recycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/dimen_zero"
+        android:layout_height="@dimen/dimen_zero"
+        android:layout_marginTop="@dimen/margin_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

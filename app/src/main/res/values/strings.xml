@@ -7,4 +7,14 @@
     <string name="wind">WIND</string>
     <string name="imperial">Imperial</string>
     <string name="metric">Metric</string>
+    <string name="current_imperial">58°</string>
+    <string name="current_metric">14°</string>
+    <string name="feels_like">Feels Like:</string>
+    <string name="mostly_sunny">Mostly Sunny</string>
+    <string name="hourly_forecast">Hourly Forecast</string>
+    <string name="see_details">See Details</string>
+    <string name="day_placeholder">Tuesday, April 28</string>
+    <string name="time_placeholder">10 AM</string>
+    <string name="percent_placeholder">0%</string>
+    <string name="wind_placeholder">SSW 4 MPH</string>
 </resources>

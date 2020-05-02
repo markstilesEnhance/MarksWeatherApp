@@ -11,31 +11,27 @@
 
         <TextView
             android:id="@+id/main_hourly_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="10 AM"
-            android:textSize="18sp"
+            style="@style/BasicText"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/time_placeholder"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/main_hourly_temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="58°"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
+            style="@style/BasicText"
+            android:text="@string/current_imperial"
+            android:layout_marginTop="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_hourly_time" />
 
         <ImageView
             android:id="@+id/main_hourly_image"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="@dimen/image_square"
+            android:layout_height="@dimen/image_square"
+            android:layout_marginTop="@dimen/margin_small"
             android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="@id/main_hourly_time"
             app:layout_constraintStart_toStartOf="@+id/main_hourly_time"
@@ -47,11 +43,9 @@
             app:layout_constraintTop_toBottomOf="@id/main_hourly_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
-            android:text="0%" />
+            style="@style/BasicText"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/percent_placeholder" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

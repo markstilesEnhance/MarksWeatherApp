@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
         prefs = getSharedPreferences("com.example.android.marksweatherapp", Context.MODE_PRIVATE)
         useMetric = prefs.getBoolean(METRIC_KEY, false)
         if(useMetric) {
-            current_temp_num.text = "14°"
-            feels_like_num.text = "14.5°"
+            current_temp_num.text = getString(R.string.current_metric)
+            feels_like_num.text = getString(R.string.current_metric)
         }
 
         initRecyclerView()
@@ -88,13 +88,13 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId) {
             R.id.action_imperial -> {
                 useMetric = false
-                current_temp_num.text = "58°"
-                feels_like_num.text = "58°"
+                current_temp_num.text = getString(R.string.current_imperial)
+                feels_like_num.text = getString(R.string.current_imperial)
             }
             R.id.action_metric -> {
                 useMetric = true
-                current_temp_num.text = "14°"
-                feels_like_num.text = "14.5°"
+                current_temp_num.text = getString(R.string.current_metric)
+                feels_like_num.text = getString(R.string.current_metric)
             }
         }
         main_recycler.removeAllViews()

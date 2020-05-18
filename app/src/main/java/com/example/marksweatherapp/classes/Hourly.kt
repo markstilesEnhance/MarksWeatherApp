@@ -1,4 +1,4 @@
-package classes
+package com.example.marksweatherapp.classes
 
 //Holds each hourly forecast.  Does not include icon, that is determined by weather
 data class Hourly(

@@ -1,6 +1,6 @@
 package com.example.marksweatherapp.UI.main
 
-import UI.detail.DetailActivity
+import com.example.marksweatherapp.UI.detail.DetailActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -18,34 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 var useMetric = false
 
-fun iconPicker(weather: String, time: String): Int {
-    return when (weather) {
-        "Sunny" -> R.drawable.ic_clear
-        "Clear" -> R.drawable.ic_clear_night
-        "Cloudy" -> R.drawable.ic_cloudy
-        "Foggy" ->  R.drawable.ic_fog
-        "Heavy Snow" -> R.drawable.ic_heavy_snow
-        "Mostly Sunny" -> R.drawable.ic_mostly_clear
-        "Mostly Clear" -> R.drawable.ic_mostly_clear_night
-        "Mostly Cloudy" -> {if(time == "9 PM" || time == "10 PM" || time == "11 PM" ||
-            time == "12 AM" || time == "1 AM" || time == "2 AM" || time == "3 AM" ||
-            time == "4 AM" || time == "5 AM" || time == "6 AM")
-        { R.drawable.ic_mostly_cloudy_night}
-        else{ R.drawable.ic_mostly_cloudy }}
-        "Partly Cloudy" -> {if(time == "9 PM" || time == "10 PM" || time == "11 PM" ||
-            time == "12 AM" || time == "1 AM" || time == "2 AM" || time == "3 AM" ||
-            time == "4 AM" || time == "5 AM" || time == "6 AM")
-        { R.drawable.ic_partly_cloudy_night }
-        else { R.drawable.ic_partly_cloudy }}
-        "Rain" -> R.drawable.ic_rain
-        "Showers" -> R.drawable.ic_showers
-        "Snow Showers" -> R.drawable.ic_snow
-        "Thunderstorm" -> R.drawable.ic_thunder
-        "Windy" -> R.drawable.ic_wind
-        "Wind and Rain" -> R.drawable.ic_wind_rain
-        else -> R.drawable.ic_unknown
-    }
-}
+
 
 class MainActivity : AppCompatActivity() {
 

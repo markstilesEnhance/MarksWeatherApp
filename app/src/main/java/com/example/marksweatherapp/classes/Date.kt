@@ -1,4 +1,4 @@
-package classes
+package com.example.marksweatherapp.classes
 
 data class Date(
     val date: String

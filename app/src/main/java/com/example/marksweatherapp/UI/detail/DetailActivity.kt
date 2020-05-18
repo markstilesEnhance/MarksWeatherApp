@@ -1,4 +1,4 @@
-package UI.detail
+package com.example.marksweatherapp.UI.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,7 +16,8 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         detail_recycler.layoutManager = LinearLayoutManager(this)
-        adapter = DetailListAdapter(detailTemp)
+        adapter =
+            DetailListAdapter(detailTemp)
         detail_recycler.adapter = adapter
     }
 }

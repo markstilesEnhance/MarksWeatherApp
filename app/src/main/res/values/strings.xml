@@ -17,4 +17,7 @@
     <string name="time_placeholder">10 AM</string>
     <string name="percent_placeholder">0%</string>
     <string name="wind_placeholder">SSW 4 MPH</string>
+    <string name="search">Search</string>
+
+    <string name="degree">%1$s°</string>
 </resources>

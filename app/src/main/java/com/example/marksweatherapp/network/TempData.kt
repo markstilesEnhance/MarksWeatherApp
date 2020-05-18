@@ -1,8 +1,8 @@
 package com.example.marksweatherapp.network
 
-import classes.Date
-import classes.DetailData
-import classes.Hourly
+import com.example.marksweatherapp.classes.Date
+import com.example.marksweatherapp.classes.DetailData
+import com.example.marksweatherapp.classes.Hourly
 
 object TempData {
 

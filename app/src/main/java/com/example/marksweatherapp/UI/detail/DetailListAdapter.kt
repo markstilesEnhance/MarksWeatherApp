@@ -1,14 +1,14 @@
-package UI.detail
+package com.example.marksweatherapp.UI.detail
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.*
-import classes.Date
-import classes.DetailData
-import classes.Hourly
+import com.example.marksweatherapp.classes.Date
+import com.example.marksweatherapp.classes.DetailData
+import com.example.marksweatherapp.classes.Hourly
 import com.example.marksweatherapp.R
-import com.example.marksweatherapp.UI.main.iconPicker
+import com.example.marksweatherapp.UI.IconPicker.iconPicker
 import com.example.marksweatherapp.UI.main.useMetric
 import kotlinx.android.synthetic.main.detail_day_item.view.*
 import kotlinx.android.synthetic.main.detail_hourly_item.view.*
@@ -27,12 +27,10 @@ class DetailListAdapter(private var list: MutableList<DetailData>): Adapter<View
                 itemView.detail_hourly_temp.text = "$metricTemp"
                 val metricWind = BigDecimal(hourly.windSpeed / 2.237).setScale(1, RoundingMode.CEILING)
                 itemView.detail_hourly_wind.text = hourly.windDir + " $metricWind MPS"
-            }
-            else {
+            } else {
                 itemView.detail_hourly_temp.text = "${hourly.temp}°"
                 itemView.detail_hourly_wind.text = hourly.windDir + " ${hourly.windSpeed} MPH"
             }
-            itemView.detail_hourly_precip.text = "${hourly.precip}%"
         }
     }
 
@@ -45,8 +43,12 @@ class DetailListAdapter(private var list: MutableList<DetailData>): Adapter<View
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when(viewType) {
-            1 -> DetailHourlyViewHolder(inflater.inflate(R.layout.detail_hourly_item, parent, false))
-            2 -> return DetailDateViewHolder(inflater.inflate(R.layout.detail_day_item, parent, false))
+            1 -> DetailHourlyViewHolder(
+                inflater.inflate(R.layout.detail_hourly_item, parent, false)
+            )
+            2 -> return DetailDateViewHolder(
+                inflater.inflate(R.layout.detail_day_item, parent, false)
+            )
             else -> throw ClassCastException("Unknown Data Type")
         }
     }

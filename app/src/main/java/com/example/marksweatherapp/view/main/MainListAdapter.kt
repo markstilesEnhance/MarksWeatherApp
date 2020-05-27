@@ -1,9 +1,9 @@
-package com.example.marksweatherapp.UI.main
+package com.example.marksweatherapp.view.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.marksweatherapp.classes.Hourly
+import com.example.marksweatherapp.model.classes.Hourly
 import com.example.marksweatherapp.R
 
 class MainListAdapter(private var list: MutableList<Hourly>): RecyclerView.Adapter<MainViewHolder>() {

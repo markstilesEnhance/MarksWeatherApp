@@ -1,15 +1,16 @@
-package com.example.marksweatherapp.UI.detail
+package com.example.marksweatherapp.view.detail
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.*
-import com.example.marksweatherapp.classes.Date
-import com.example.marksweatherapp.classes.DetailData
-import com.example.marksweatherapp.classes.Hourly
+import com.example.marksweatherapp.model.classes.MyDate
+import com.example.marksweatherapp.model.classes.DetailData
+import com.example.marksweatherapp.model.classes.Hourly
 import com.example.marksweatherapp.R
-import com.example.marksweatherapp.UI.IconPicker.iconPicker
-import com.example.marksweatherapp.UI.main.useMetric
+import com.example.marksweatherapp.model.converters.IconPicker.iconPicker
+import com.example.marksweatherapp.view.main.useMetric
 import kotlinx.android.synthetic.main.detail_day_item.view.*
 import kotlinx.android.synthetic.main.detail_hourly_item.view.*
 import java.lang.ClassCastException
@@ -20,23 +21,24 @@ class DetailListAdapter(private var list: MutableList<DetailData>): Adapter<View
 
     class DetailHourlyViewHolder(itemView: View): ViewHolder(itemView) {
         fun bind(hourly: Hourly) {
+            val context: Context = itemView.context
             itemView.detail_hourly_time.text = hourly.time
             itemView.detail_hourly_image.setImageResource(iconPicker(hourly.weather, hourly.time))
             if(useMetric) {
                 val metricTemp = BigDecimal((hourly.temp - 32) / 1.8).setScale(1, RoundingMode.CEILING)
-                itemView.detail_hourly_temp.text = "$metricTemp"
+                itemView.detail_hourly_temp.text = context.getString(R.string.degree_place, metricTemp)
                 val metricWind = BigDecimal(hourly.windSpeed / 2.237).setScale(1, RoundingMode.CEILING)
-                itemView.detail_hourly_wind.text = hourly.windDir + " $metricWind MPS"
+                itemView.detail_hourly_wind.text = context.getString(R.string.wind_place, hourly.windDir, metricWind, "MPS")
             } else {
-                itemView.detail_hourly_temp.text = "${hourly.temp}°"
-                itemView.detail_hourly_wind.text = hourly.windDir + " ${hourly.windSpeed} MPH"
+                itemView.detail_hourly_temp.text = context.getString(R.string.degree_place, hourly.temp.toString())
+                itemView.detail_hourly_wind.text = context.getString(R.string.wind_place, hourly.windDir, hourly.windSpeed.toString(), "MPH")
             }
         }
     }
 
     class DetailDateViewHolder(itemView: View): ViewHolder(itemView) {
-        fun bind(date: Date) {
-            itemView.detail_day.text = date.date
+        fun bind(myDate: MyDate) {
+            itemView.detail_day.text = myDate.date
         }
     }
 
@@ -62,7 +64,7 @@ class DetailListAdapter(private var list: MutableList<DetailData>): Adapter<View
                 holder.bind(hourlyItem)
             }
             is DetailDateViewHolder -> {
-                val dateItem = list[position] as Date
+                val dateItem = list[position] as MyDate
                 holder.bind(dateItem)
             }
         }

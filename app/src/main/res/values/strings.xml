@@ -19,5 +19,6 @@
     <string name="wind_placeholder">SSW 4 MPH</string>
     <string name="search">Search</string>
 
-    <string name="degree">%1$s°</string>
+    <string name="degree_place">%1$s°</string>
+    <string name="wind_place">%1$s %2$s %3$s</string>
 </resources>

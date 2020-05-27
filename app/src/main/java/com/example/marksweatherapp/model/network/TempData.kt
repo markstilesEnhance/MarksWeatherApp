@@ -1,8 +1,8 @@
-package com.example.marksweatherapp.network
+package com.example.marksweatherapp.model.network
 
-import com.example.marksweatherapp.classes.Date
-import com.example.marksweatherapp.classes.DetailData
-import com.example.marksweatherapp.classes.Hourly
+import com.example.marksweatherapp.model.classes.MyDate
+import com.example.marksweatherapp.model.classes.DetailData
+import com.example.marksweatherapp.model.classes.Hourly
 
 object TempData {
 
@@ -58,7 +58,7 @@ object TempData {
     )
 
     val detailTemp : MutableList<DetailData> = mutableListOf(
-        Date("Tuesday, April 28"),
+        MyDate("Tuesday, April 28"),
         Hourly("10 AM", "Mostly Sunny", 58, 58, 0, "SSW", 4),
         Hourly("11 AM", "Mostly Sunny", 59, 59, 0, "SSW", 4),
         Hourly("12 PM", "Mostly Sunny", 61, 61, 0, "S", 4),
@@ -73,7 +73,7 @@ object TempData {
         Hourly("9 PM", "Showers", 58, 55, 40, "SE", 10),
         Hourly("10 PM", "Showers", 55, 52, 50, "ESE", 11),
         Hourly("11 PM", "Rain", 54, 51, 80, "ESE", 12),
-        Date("Wednesday, April 29"),
+        MyDate("Wednesday, April 29"),
         Hourly("12 AM", "Rain", 53, 49, 85, "ESE", 12),
         Hourly("1 AM", "Rain", 53, 50, 75, "SE", 11),
         Hourly("2 AM", "Showers", 54, 51, 50, "SE", 10),
@@ -98,7 +98,7 @@ object TempData {
         Hourly("9 PM", "Showers", 58, 56, 35, "S", 12),
         Hourly("10 PM", "Showers", 58, 56, 35, "S", 10),
         Hourly("11 PM", "Cloudy", 57, 55, 25, "S", 9),
-        Date("Thursday, April 30"),
+        MyDate("Thursday, April 30"),
         Hourly("12 AM", "Showers", 56, 54, 35, "S", 7),
         Hourly("1 AM", "Cloudy", 55, 53, 25, "SSW", 7),
         Hourly("2 AM", "Showers", 54, 52, 35, "S", 7),

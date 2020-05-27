@@ -1,15 +1,15 @@
-package com.example.marksweatherapp.UI.detail
+package com.example.marksweatherapp.view.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marksweatherapp.R
-import com.example.marksweatherapp.network.TempData.detailTemp
+import com.example.marksweatherapp.model.network.TempData.detailTemp
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
-    lateinit var adapter: DetailListAdapter
+    private lateinit var adapter: DetailListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
